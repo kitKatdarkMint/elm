@@ -1,3 +1,5 @@
+{-programme principal qui décrit votre modèle de page et implémente les fonctions init,
+update et view de l'architecture elm -}
 module Main exposing (..)
 import Browser
 import Html exposing (..)
