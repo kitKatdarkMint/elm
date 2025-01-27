@@ -3,6 +3,13 @@
 MAIN
 =====
 */
+.canvas {
+    width: 500px;
+    height: 500px;
+    margin: 20px auto;
+    border: 1px solid black;
+    background-color: white;
+}
 
 body{
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Open Sans, Ubuntu, Fira Sans, Helvetica Neue, sans-serif;

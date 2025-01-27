@@ -1,5 +1,3 @@
-{-programme principal qui décrit votre modèle de page et implémente les fonctions init,
-update et view de l'architecture elm -}
 module Main exposing (..)
 import Browser
 import Html exposing (..)
@@ -51,24 +49,20 @@ update msg model =
 view : Model -> Html Msg
 view model =
   div 
-  [style "text-align" "center"]
+  [class "page"]
     [ h1 [] [ text "Type your code below : " ]
-    ,input 
+    ,div [ class "field field_v1" ]
+      [input 
       [ placeholder "example : [Repeat 10 [Forward 1, ]]"
       , value model.content
       , onInput Change
-      , style "width" "300px"
-      ,style "padding" "10px"
-      , style "margin" "10px 0" ] []
+      , class "field__input" ] 
+      []
+      ]
     ,button 
     [style "cursor" "pointer"]
     [text "Draw"]
     ,div 
-      [style "text-align" "center" 
-      ,style "border" "1px solid black"
-      , style "background-color" "white"
-      ,style "height" "500px"
-      , style "width" "500px"
-      , style "margin" "20px auto" ]
+      [class "canvas"] 
       []
-    ]
+   ]
