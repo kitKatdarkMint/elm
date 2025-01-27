@@ -26,4 +26,4 @@ instructionUser = oneOf [succeed  Forward
                         ]
 -- exécuter un parser sur une chaîne de caractères donnée
 runBlock :String -> Result (List DeadEnd) (List Instruction)
-runBlock = 
+runBlock userString = run block userString
