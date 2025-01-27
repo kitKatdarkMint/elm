@@ -10,7 +10,10 @@ type Instruction
     | Left Int
     | Right Int
     | Repeat Int (List Instruction)
+block : Parser (List Instruction) --afin d'accéder de manière recursive liste dans liste
+block = 
 instructionUser : Parser Instruction
+{-parseur oneOf qui permet d'essayer plusieurs parseurs dans l'ordre jusqu'à ce qu'un réussisse -}
 instructionUser = oneOf [succeed  Forward 
                                 |."Forward" --utilisation du .| pour ecarter resultat de la suite
                         ,succeed Left 
@@ -21,3 +24,6 @@ instructionUser = oneOf [succeed  Forward
                                 |. "Repeat"
                                 |= lazy (\_ -> block)
                         ]
+-- exécuter un parser sur une chaîne de caractères donnée
+runBlock :String -> Result (List DeadEnd) (List Instruction)
+runBlock = 
