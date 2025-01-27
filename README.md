@@ -1,6 +1,6 @@
-# elm
+# ELM
 
-note brouillon pour executer code :
+
 ## Crée un fichier index.html que vous pouvez ouvrir dans un navigateur.
 elm make src/Main.elm
 
