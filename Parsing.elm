@@ -1,6 +1,5 @@
-{- module de parsing qui fournit une fonction read prenant en entrée une chaîne de caractères et retournant une structure de données que vous aurez définie pour représenter les programmes TcTurtle.
-Vous aurez besoin des fonctions succeed, token, int, spaces, lazy, run du package Parser -}
-module Parsing exposing(..)
+module Parsing exposing (..)
+
 import Parser exposing (..)
 
 
@@ -18,24 +17,25 @@ blockInst = sequence --fonction de Parser qui recoit une liste d'instructions da
     , separator = ","
     , end = "]"
     , spaces = spaces --ignore les espaces 
-    , item = instruction}
+    , item = instructionUser
+    , trailing = Parser.Optional}
     
 instructionUser : Parser Instruction
 {-parseur oneOf qui permet d'essayer plusieurs parseurs dans l'ordre jusqu'à ce qu'un réussisse -}
 instructionUser = oneOf [succeed  Forward 
-                                |."Forward" --utilisation du .| pour ecarter resultat de la suite
+                                |. keyword "Forward" --utilisation du .| pour ecarter resultat de la suite
                                 |. spaces --ignore les espaces
                                 |= int --recuperation de l'entier
                         ,succeed Left 
-                                |. "Left"
+                                |. keyword "Left"
                                 |. spaces --ignore les espaces
                                 |= int --recuperation de l'entier
                         ,succeed Right 
-                                |. "Right"
+                                |. keyword "Right"
                                 |. spaces --ignore les espaces
                                 |= int --recuperation de l'entier
                         ,succeed Repeat 
-                                |. "Repeat"
+                                |. keyword "Repeat"
                                 |. spaces --ignore les espaces
                                 |= int --recuperation de l'entier
                                 |. spaces --si il y a à nouveau espace entre crochet et entier
