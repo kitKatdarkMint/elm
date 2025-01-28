@@ -10,8 +10,6 @@ Clôner le répertoire Github sur votre machine personne en exécutant la ligne 
 * Parsing.elm -> Module utilisant le package `Parser`
 * Main.elm -> Programme principal décrivant l'affichage de la page et applique l'architecture ELM avec les trois fonctions suivantes : `Model`,`Update` et `View`.
 
-## Comparaison elm et JavaScript
-
 #### Packages utilisés :
 * **http** : elm install elm/http
 
@@ -20,3 +18,5 @@ Clôner le répertoire Github sur votre machine personne en exécutant la ligne 
 * **Svg**: elm install elm/svg
 
 * **Parser**:elm install elm/parser
+* 
+## Comparaison elm et JavaScript
