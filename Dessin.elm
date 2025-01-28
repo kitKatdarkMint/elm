@@ -5,5 +5,5 @@ import Svg exposing (..)
 
 rotation pos instruction = 
 		case instruction of
-            Right changeAngle -> { pos | angle = pos.angle -changeAngle }
-            Left changeAngle -> {pos | angle = pos.angle + changeAngle}
+	            Right changeAngle -> { pos | angle = pos.angle -changeAngle }
+	            Left changeAngle -> {pos | angle = pos.angle + changeAngle}
