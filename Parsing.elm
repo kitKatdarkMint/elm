@@ -12,8 +12,8 @@ type Instruction
     | Repeat Int (List Instruction)
 
     
-block : Parser (List Instruction) --afin d'accéder de manière recursive bloc d'instructions dans un autre bloc d'instructions
-block = sequence --fonction de Parser qui recoit une liste d'instructions dans un ordre donné
+blockInst : Parser (List Instruction) --afin d'accéder de manière recursive bloc d'instructions dans un autre bloc d'instructions
+blockInst = sequence --fonction de Parser qui recoit une liste d'instructions dans un ordre donné
     {start = "["
     , separator = ","
     , end = "]"
@@ -39,8 +39,8 @@ instructionUser = oneOf [succeed  Forward
                                 |. spaces --ignore les espaces
                                 |= int --recuperation de l'entier
                                 |. spaces --si il y a à nouveau espace entre crochet et entier
-                                |= lazy (\_ -> block)
+                                |= lazy (\_ -> blockInst)  --on renvoie la fonction block ici
                         ]
 -- exécuter un parser sur une chaîne de caractères donnée
 runBlock :String -> Result (List DeadEnd) (List Instruction) --List DeadEnd correspond liste d'erreurs
-runBlock userString = run block userString
+runBlock userString = run blockInst userString
