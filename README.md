@@ -1,8 +1,9 @@
-# ELM
+# Projet ELM - 3TC2 2025
 
+_Groupe de projet : Charles BOUQUET, Kathleen SOMERS, Paul-Henri LUCOTTE_
 
-## Crée un fichier index.html que vous pouvez ouvrir dans un navigateur.
-elm make src/Main.elm
+## Execution du programme
+Clôner le répertoire Github sur votre machine personne en exécutant la ligne suivante sur votre terminal : `git clone https://github.com/kitKatdarkMint/elm.git`
 
 ## Crée un fichier js optimisé pour l'appeler depuis un fichier HTML.
 elm make src/Main.elm --optimize --output=main.js
