@@ -19,4 +19,9 @@ Vous pouvez également cliquer sur le lien suivant pour tester notre application
 
 * **Parser**:elm install elm/parser
   
+## Lancer le programme:
+Pour pouvoir tester le programme, il suffit d'ouvrir l'intex.html dans un navigateur.
+Si vous souhaitez recompiler le programme il faut ouvrir une console, aller dans le répertoire src et écrire elm make Main.elm
+Attention: si vous recompilez l'index, le style ne sera plus appliqué, il vous faudra alors aller dans la balise style et mettre src="style.css" et supprimer ce qu'il y a derrière
+
 ## Comparaison elm et JavaScript
