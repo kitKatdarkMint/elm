@@ -4,10 +4,11 @@ import Browser
 import Html exposing (..)
 import Html.Attributes exposing (..)
 import Html.Events exposing (onInput, onClick)
-import Dessin exposing (..)
-import Svg exposing (..)
-import Parsing exposing (..)
 import Svg.Attributes exposing (width, height, viewBox)
+import Svg exposing (..)
+-- importation des autres scripts
+import Parsing exposing (..)
+import Dessin exposing (..)
 
 
 -- MAIN
@@ -75,7 +76,7 @@ executeInstructions start instructions lines =
                         (\_ (pos, lns) -> executeInstructions pos subInstructions lns) --on ignore la valeur qu'il y a dans la list.range
                         --pos est la position et lns la liste des lignes actuelles
                         (currentPos, currentLines)
-                        (List.range 1 count) --on crée une liste de 1 à count dans laquelle on met le résultat de foldr (pour tracer les lignes après) (donc on execute les instructions imbriquées count fois)
+                        (List.range 1 count) --on crée une liste de 1 à count dans laquelle on met le résultat de foldr, pour tracer les lignes après (donc on execute les instructions imbriquées "count" fois)
         )
         (start, lines)
         instructions
