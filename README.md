@@ -25,4 +25,4 @@ Si vous souhaitez recompiler le programme il faut ouvrir une console, aller dans
 Attention: si vous recompilez l'index, le style ne sera plus appliqué, il vous faudra alors aller dans la balise style et mettre src="style.css" et supprimer ce qu'il y a derrière
 
 ## Comparaison elm et JavaScript
-L'avantage d'elm est que ce langage dispose d'un typage statique fort, cela signifie que les erreurs sont détectées à la compilation et non durant l'execution du code contrairement à JavaScript. Ceci permet de rendre le programme davantage fiable et de corriger le code lors de la compilation. Par ailleurs, les données sont immuables, cela évite que les effets secondaires indésirables.
+L'avantage d'elm est que ce langage dispose d'un typage statique fort, cela signifie que les erreurs sont détectées à la compilation et non durant l'exécution du code contrairement à JavaScript. Ceci permet de rendre le programme davantage fiable et de corriger le code lors de la compilation. Par ailleurs, les données sont immuables donc les valeurs ne sont pas modifiées après leur création. Cela évite des effets secondaires indésirables.
